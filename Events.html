@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DevCode Test Site with Text Editor</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #888888; 
+    font-family: Lato, sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+  nav.header__nav {
+    background-color: #333;
+  }
+  ul.header__nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 10px 20px;
+    display: flex;
+    gap: 15px;
+  }
+  li.header__nav-item {
+    margin: 0;
+  }
+  a.header__nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 4px;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  a.header__nav-link:hover,
+  a.header__nav-link.active {
+    background-color: #ff7f00;
+    color: white;
+  }
+  .center-container {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .update-box {
+    background-color: white;
+    max-width: 600px;
+    width: 90%;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 100px rgba(221, 44, 198, 0.3);
+    font-size: 18px;
+    color: #333;
+    line-height: 8;
+  }
+</style>
+</head>
+<body>
+<nav class="header__nav" aria-label="Primary">
+  <ul class="header__nav-list">
+    <li class="header__nav-item"><a class="header__nav-link" href="https://zeromurder.github.io/Site-by-DevCoder.github.io/?q=buy#">Home</a></li>
+  </ul>
+</nav>
+<div class="center-container">
+  <div class="update-box">
+    <h3>Info Update Site</h3>
+    <p>Updating...</p>
+    <p>by DevCoder</p>
+  </div>
+</div>
+</body>
+</html>
+
+
