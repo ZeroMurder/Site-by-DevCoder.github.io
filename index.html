@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DevCode Test Site</title>
+  <style>
+    html, body {
+      font-family: Lato, sans-serif;
+      color: #424551;
+      line-height: 160%;
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      background: #222;
+    }
+    .test {
+      min-height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+    .header {
+      font-weight: 700;
+      background: #aaffb5;
+    }
+    .container-servis-settings {
+      max-width: 1260px;
+      padding: 0 15px;
+      margin: 0 auto;
+      height: 100%;
+    }
+    .button {
+      display: inline-block;
+      letter-spacing: 0.5px;
+      line-height: 52px;
+      padding: 0 40px;
+      color: #ffffff;
+      border-radius: 4px;
+      background: linear-gradient(55.95deg, #f5f5f5 40%, #1cff15 100%);
+      white-space: nowrap;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      font-size: 16px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .header__top {
+      display: flex;
+      align-items: center;
+      padding: 10px 15px;
+      background: #f5f5f5;
+    }
+    .header__top-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      width: 100%;
+      max-width: 1260px;
+      margin: 0 auto;
+    }
+    .header__logo {
+      width: 60px;
+      height: auto;
+      margin-right: 60px;
+      flex-shrink: 0;
+    }
+    .header__logo img {
+      max-width: 60px;
+      height: auto;
+      display: block;
+    }
+    .header__nav {
+      margin-right: auto;
+    }
+    .header__nav-list {
+      display: flex;
+      gap: 15px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .header__nav-list li a {
+      text-decoration: none;
+      color: #222;
+      font-size: 16px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .header__nav-list li a:hover {
+      color: #ff15a8;
+    }
+    .header__nav-item {
+      margin-right: 40px;
+    }
+    .header__nav-item:last-child {
+      margin-right: 0;
+    }
+    .header__nav-link {
+      font-weight: 700;
+      line-height: 1.6;
+      color: #af15ff;
+      white-space: nowrap;
+    }
+    .header__nav-link:hover {
+      color: #ff0034;
+    }
+    .header__user-nav::before {
+      content: "";
+      display: block;
+      background: url("https://avatars.mds.yandex.net/i?id=f5bf9db7d5689bcf36f71b2b8813e40a645738d6-5386023-images-thumbs&n=13") no-repeat center/contain;
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    .header__user-nav {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-weight: 500;
+      font-size: 14px;
+      color: #222;
+      cursor: pointer;
+    }
+    .header__user-btn {
+      white-space: nowrap;
+      text-decoration: none;
+      color: #222;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .header__user-btn:hover {
+      color: #af15ff;
+    }
+    .header__top-btn {
+      padding: 0 40px;
+      line-height: 52px;
+      color: #fff;
+      font-weight: 700;
+      border-radius: 4px;
+      background: linear-gradient(55.95deg, #FF7F00 0%, #FFA500 100%);
+      text-decoration: none;
+      white-space: nowrap;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+    .header__top-btn:hover {
+      background: linear-gradient(55.95deg, #FFA500 0%, #FF7F00 100%);
+    }
+    .header__btn-box {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .header__content-btn {
+      color: #ff0088;
+    }
+    .heading {
+  color:#424551
+}
+
+.heading_title {
+  line-height: 150%;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+    font-size: 19.5px;
+}
+
+.heading_titlehead {
+  font-weight: 900;
+  font-size: 46px;
+  line-height: 130%;
+  
+}
+.serach{
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  padding: 10px;
+}
+form.search input[type="text"],
+form.search button {
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  background: #333; 
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+form.search input[type="text"] {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  width: 300px;
+}
+
+form.search button {
+  cursor: pointer;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+
+form.search {
+  background: linear-gradient(90deg, #a0f6fc, #831683);
+  border-radius: 5px;
+  padding: 2px; 
+  width: fit-content;
+  margin: 0 auto;
+  border-radius: 1rem;
+}
+    /*----------------------------------------------*/
+    .header__body {
+      flex-grow: 1;
+    }
+    .container {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    .header__body-inner {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      margin: 0 auto;
+    }
+    .header__main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1260px;
+      margin: 0 auto 40px auto;
+      padding: 0 15px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .header__content {
+      margin-right: 30px;
+      max-width: 500px;
+      flex: 1 1 500px;
+    }
+    .header__img {
+      max-width: 100px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    .header__title {
+      font-weight: 900;
+      font-size: 64px;
+      line-height: 130%;
+      letter-spacing: 1px;
+      max-width: 500px;
+      margin-bottom: 60px;
+      color: #222;
+    }
+    .header__content-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .header__content-btn {
+      display: inline-block;
+      padding: 14px 32px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+    .button--filled {
+      background: linear-gradient(55.95deg, #FF7F00 0%, #FFA500 100%);
+      color: white;
+      border-color: transparent;
+    }
+    .button--filled:hover {
+      background: linear-gradient(55.95deg, #FFA500 0%, #47ff40 100%);
+    }
+    .button--outline {
+      border: 2px solid #FF7F00;
+      color: #FF7F00;
+      background: transparent;
+    }
+    .button--outline:hover {
+      background: #FF7F00;
+      color: white;
+    }
+    .header__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 80px;
+      max-width: 1260px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 15px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .header__row-item {
+      flex: 1 1 150px;
+      font-weight: 600;
+      color: #222;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .header__row > span {
+      background: #0018ff;
+      padding: 5px 10px;
+      border-radius: 3px;
+      color: white;
+      font-weight: 900;
+      font-size: 46px;
+      line-height: 130%;
+      vertical-align: middle;
+    }
+    form[name="search"] {
+      float: right;
+    }
+    form[name="search"] input[type="text"] {
+      border: 1px solid #ccc;
+      padding: 6px 10px;
+      border-radius: 4px 0 0 4px;
+      outline: none;
+      font-size: 14px;
+    }
+    form[name="search"] button {
+      border: 1px solid #ccc;
+      border-left: none;
+      padding: 6px 12px;
+      border-radius: 0 4px 4px 0;
+      background: #ff7f00;
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    form[name="search"] button:hover {
+      background: #ffa500;
+    }
+    .aside-menu {
+      max-width: 200px;
+      padding: 0 15px;
+      margin: 30px;
+      list-style: none;
+    }
+    .aside-menu li {
+      font-weight: 300;
+      list-style-type: square;
+      border-top: 1px solid #e7e7e7;
+      padding: 8px 0;
+    }
+    .aside-menu li:first-child {
+      border: none;
+    }
+    .aside-menu li.active {
+      color: #29c5e6;
+      font-weight: 600;
+    }
+    .aside-menu a {
+      color: #8f8f8f;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .aside-menu a:hover {
+      color: #29c5e6;
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header__main {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .header__content {
+        margin-right: 0;
+        max-width: 100%;
+      }
+      .header__row {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .header__row-item {
+        flex: none;
+        font-size: 18px;
+      }
+      .aside-menu {
+        max-width: 100%;
+        margin: 20px 0;
+      }
+    }
+    .about {
+  /* стили для секции about */
+}
+
+.container {
+  /* стили для контейнера */
+}
+
+.about_inner {
+}
+
+.about_section {
+    display: flex;
+    align-items: flex-end;
+}
+
+.about_section-content {
+  /* стили для блока с контентом about_section */
+}
+
+.about_heading {
+  margin-bottom: 48px;
+
+
+}
+
+.about_text{
+  margin-bottom: 60px;
+
+}
+.about_t {
+  margin-bottom: 24px;
+}
+.about_t:last-child{
+  margin-bottom: 0px;
+}
+.about_t about_t--accent{
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+}
+
+.about_btn-box {
+  display: flex;
+
+}
+.about_btn{
+  margin-right: 24px;
+
+}
+.about_btn:last-child{
+  margin-right: 0px;
+
+}
+  
+.header__content-btn {
+  /* стили для кнопок header__content-btn */
+}
+
+.button--outline-2 {
+  border: 1px solid #ccc;
+      border-left: none;
+      padding: 6px 12px;
+      border-radius: 0 4px 4px 0;
+      background: #ff0088;
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+}
+
+.button--filled-2 {
+  border: 1px solid #ccc;
+      border-left: none;
+      padding: 6px 12px;
+      border-radius: 0 4px 4px 0;
+      background: #ff0034;
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+}
+
+.about_img {
+  /* стили для картинки about_img */
+}
+
+.about_section2 {
+  /* стили для about_section2 */
+}
+
+    /********************************************************************************/
+
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="overlay"></div>
+
+    <header class="header">
+      <!-- шапка сайта - навигация: Главная, Помощь, О сайте и тд -->
+      <a class="burger burger--follow" href="#"></a>
+      <div class="header__top">
+        <div class="header__top-inner">
+          <a class="header__logo logo" href="/">
+            <img src="https://hitecher.com/storage/img/20190423/0f2dfe8abc33a2ed3802.jpg" alt="Logo" />
+          </a>
+
+          <nav class="header__nav" aria-label="Primary Navigation">
+            <ul class="header__nav-list">
+              <li class="header__nav-item">
+                <a class="header__nav-link" href="/storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/Devcoder/DevCoder.html">About Us-DevCoder</a>
+              </li>
+              <li class="header__nav-item">
+                <a class="header__nav-link" href="#directions">Courses</a>
+              </li>
+              <li class="header__nav-item">
+                <a class="header__nav-link" href="D:\Desktop\hhh.html">Events</a>
+              </li>
+              <li class="header__nav-item">
+                <a class="header__nav-link" href="#blog">Blog</a>
+              </li>
+              <li class="header__nav-item">
+                <a class="header__nav-link" href="#info">Contacts</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="header__btn-box">
+            <a class="header__top-btn button" href="#questions">Get consultation</a>
+            <div class="header__user-nav">
+              <a class="header__user-btn" href="#">Log in</a> /
+              <a class="header__user-btn" href="#">Register</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="header__body-inner"></div>
+        
+        <div class="header__main">
+          <div class="header__content">
+            <h1 class="header__title">DevCoder: Hi Coder!</h1>
+
+            <div class="header__content-buttons">
+              <a class="header__content-btn button--outline" href="#">tester</a>
+              <a class="header__content-btn button--filled" href="#">test</a>
+            </div>
+          </div>
+        </div>
+
+        <ul class="header__row">
+          <li class="header__row-item">
+            <span>-_-</span> Test Version Site v0.1
+          </li>
+          <li class="header__row-item">
+            <span>?!</span> Site-Antivirus in Future....
+          </li>
+          <li class="header__row-item">
+            <span>:3 ^_^</span> This Site created DevCoder
+          </li>
+          <li class="header__row-item">
+            <span>Hi!!!!!</span> Hello You Very nice User!
+          </li>
+        </ul>
+      </div>
+    </header>
+    <form class="search" action="#" method="get" role="search" aria-label="Site Search">
+        <input type="text" name="q" placeholder="Search" aria-label="Search query" />
+        <button type="submit">GO</button>
+      </form>
+    <main class="main">
+      <section class="about">
+        <div class="container">
+          <div class="about_inner">
+            <div class="about_section">
+              <div class="about_section-content">
+                <div class="about_heading heading">
+                  <p class="heading_title">Welcome</p>
+                  <h2 class="heading_titlehead">to DevKoder Site and Antivirus Shop</h2>
+                </div>
+                <div class="about_text">
+                <p class="about_t about_t--accent">
+                  By DevCoder - Real Name Andrey 
+                  <img src="https://avatars.mds.yandex.net/i?id=dea6ec2552403499577164e38c71de3c_l-12423090-images-thumbs&n=13" alt="">
+                </p>
+                <p class="about_t">
+                  This site is a manual code created by DevCoder, in html and css and java, initially it represents the structure of a test site, but in the future it will be an article and a store of antiviruses or other programs, most of which are free, while others are paid. The most important thing is the income and good user ratings, as well as the guarantee of the program's functionality.
+                </p>
+              </div>
+                <div class="about_btn-box">
+                  <a class="header__content-btn button--outline-2" href="#">communication with the author</a>
+              <a class="header__content-btn button--filled-2" href="#">Buy Programm</a>
+                </div>
+              </div>
+<img src="https://img.freepik.com/free-photo/glowing-blue-abstract-pattern-computer-language-generated-by-ai_188544-31058.jpg?semt=ais_incoming" alt="" class="about_img">
+            </div>
+            <div class="about_section2">
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"></footer>
+  </div>
+</body>
+</html>
