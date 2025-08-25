@@ -222,9 +222,11 @@ form.search {
       flex-grow: 1;
     }
     .container {
-      max-width: 1260px;
-      margin: 0 auto;
-      padding: 0 15px;
+      width: 100%;
+      max-width: 1260px; 
+      margin: 0 auto;     
+      padding: 0 15px;    
+      box-sizing: border-box; 
     }
     .header__body-inner {
       display: flex;
@@ -377,11 +379,14 @@ form.search {
     .aside-menu a:hover {
       color: #29c5e6;
     }
-    /* Responsive */
+    
     @media (max-width: 768px) {
       .header__main {
         flex-direction: column;
         align-items: flex-start;
+        .container {
+    padding: 0 10px; 
+      }  
       }
       .header__content {
         margin-right: 0;
@@ -491,7 +496,29 @@ form.search {
 }
 
 .about_section2 {
-  /* стили для about_section2 */
+}
+.about_image-box {
+}
+.about_fastt {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+  display: flex;
+  gap: 30px;
+  font-weight: 600;
+  color: #222;
+  font-size: 18px;
+}
+.about_fast span {
+   font-weight: 900;
+  margin-right: 8px;
+}
+.about_img_under_buttons {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: block;
 }
 
     /********************************************************************************/
@@ -597,28 +624,16 @@ form.search {
                   <a class="header__content-btn button--outline-2" href="#">communication with the author</a>
               <a class="header__content-btn button--filled-2" href="#">Buy Programm</a>
                 </div>
-              </div>
-<img src="https://img.freepik.com/free-photo/glowing-blue-abstract-pattern-computer-language-generated-by-ai_188544-31058.jpg?semt=ais_incoming" alt="" class="about_img">
-            </div>
+              <img src="https://img.freepik.com/free-photo/glowing-blue-abstract-pattern-computer-language-generated-by-ai_188544-31058.jpg?semt=ais_incoming" alt="AI pattern" class="about_img_under_buttons">
             <div class="about_section2">
               <div class="about_image-box">
                 <img src="https://ru.freepik.com/icon/tablet_2271414#fromView=search&page=1&position=74&uuid=2391ddae-09f8-475b-970e-636a2927463b" alt="">
               </div>
-              <ul class="about_fast">
-                <li class="about_fast"></li>
-                <span>yes</span>
-                Online
-                <li class="about_fast"></li>
-                <span>yes</span>
-                Year2025
-                <li class="about_fast"></li>
-                <span>/</span>
-                Test
-                <li class="about_fast"></li>
-                <span>/</span>
-                Test1
-              </ul>
-
+              <ul class="about_statistics">
+    <li><span>Users:</span> 1200+</li>
+    <li><span>Downloads:</span> 3500+</li>
+    <li><span>Reviews:</span> 870+</li>
+  </ul>
             </div>
           </div>
         </div>
@@ -628,4 +643,3 @@ form.search {
   </div>
 </body>
 </html>
-
