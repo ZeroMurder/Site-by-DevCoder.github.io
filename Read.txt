@@ -1,0 +1,3 @@
+This website was created by me,
+ the developer, manually, and the index.html buttons were written by me,
+and the login and registration buttons were created using code from codepen.
